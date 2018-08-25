@@ -2,7 +2,7 @@
   <div class="home">
     <section class="f-left hero w-100pct bg-cl-white">
       <div class="f-left bg-cl-light is-fullwidth h-1px"></div>
-      <div class="dp-flex jtf-ct-center al-it-center f-drt-column h-100vh w-100pct">
+      <div class="dp-flex jtf-ct-center al-it-center f-drt-column h-100calc w-100pct">
         <div class="w-300px pd-10px t-al-center bd-cl-light bd-w-2px bd-st-solid h-1000px">
           <div id="myQr" class="pd-vtc-20px"></div>
           <div class="h-60px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-start al-it-center f-w-bold ovf-y-hidden">
