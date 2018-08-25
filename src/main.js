@@ -1,18 +1,29 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
 import Buefy from 'buefy'
+import Web3 from 'web3'
+import Contract from '@/utils/contact'
 import 'buefy/lib/buefy.css'
 import 'begeta/css/begeta.min.css'
 
 Vue.config.productionTip = false
 Vue.use(Buefy)
 
+let web3 = null
+if (typeof window.web3 !== 'undefined') {
+  web3 = new Web3(window.web3.currentProvider)
+} else {
+  console.log('Please login Metamask.')
+}
+
+const contract = new web3.eth.Contract(Contract.abi, Contract.address)
+
+Vue.prototype.$web3 = web3
+Vue.prototype.$contract = contract
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')

@@ -22,9 +22,9 @@
               </form>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
-    </section>   
+    </section>
   </div>
 </template>
 
@@ -32,7 +32,12 @@
 // @ is an alias to /src
 
 export default {
-  name: 'home'
+  name: 'home',
+  mounted () {
+    console.log(this)
+    console.log(this.$web3)
+    console.log(this.$contract.methods)
+  }
 }
 </script>
 
