@@ -34,9 +34,9 @@
 export default {
   name: 'home',
   mounted () {
-    console.log(this)
-    console.log(this.$web3)
-    console.log(this.$contract.methods)
+    // console.log(this)
+    // console.log(this.$web3)
+    // console.log(this.$contract.methods)
   }
 }
 </script>

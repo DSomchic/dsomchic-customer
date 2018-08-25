@@ -1,23 +1,42 @@
 <template>
-  <nav class="navbar navbar--black pd-10px" role="navigation" aria-label="main navigation" >
-    <div class="navbar-brand">
+  <div class="f-left w-100pct">
+    <div class="f-left">
       <a class="navbar-item" href="/">
         <img alt="Vue logo" src="@/assets/logo.png">
         <h1 class="title cl-white">Somchoic</h1>
       </a>
     </div>
-    <div class="navbar-end">
-      <span class="navbar-item title cl-white">0 SC</span>
+    <div class="f-right">
+      ss
     </div>
-  </nav>
+  </div>
 </template>
 
+<script>
+import bn from '@/utils/bn'
+
+export default {
+  name: 'BaseNavbar',
+  data () {
+    return {
+      userAddr: '',
+      somcTokenBalance: 0
+    }
+  },
+  methods: {
+    async getTokenBalnce () {
+      const tokenBalance = await this.$contract.methods.balanceOf(this.userAddr).call()
+      this.somcTokenBalance = bn.toHumanNumber(tokenBalance)
+    }
+  },
+  async mounted () {
+    const accounts = await this.$web3.eth.getAccounts()
+    this.userAddr = accounts[0]
+    await this.getTokenBalnce()
+  }
+}
+</script>
+
 <style scoped>
-.navbar--black {
-  background: #191919;
-}
-/* DISABLE HOVER */
-.navbar-item:hover {
-  background: #191919 !important;
-}
+
 </style>
