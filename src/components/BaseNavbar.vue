@@ -1,12 +1,12 @@
 <template>
   <div class="f-left w-100pct pd-15px nav-container">
     <div class="f-left w-20pct">
-      <img class="f-left" src="@/assets/logo.png" width="30px" height="30px">
+      <img class="f-left" src="https://p-u.popcdn.net/attachments/images/000/010/730/large/Pizza_Hackathon_Logo.png?1532094493" width="50px">
     </div>
-    <div class="f-left w-60pct t-al-center pd-t-5px">
-      <a v-clipboard:copy="userAddr" v-clipboard:success="onCopy">{{ userAddr }}</a>
+    <div class="f-left w-60pct t-al-center pd-t-10px">
+      <a class="text-overflow" v-clipboard:copy="userAddr" v-clipboard:success="onCopy">{{ userAddr }}</a>
     </div>
-    <div class="f-left w-20pct t-al-right cs-pointer" @click="openEtherScan">
+    <div class="f-left w-20pct t-al-right cs-pointer pd-t-10px" @click="openEtherScan">
       <b-icon icon="open-in-new" type="is-primary"></b-icon>
     </div>
   </div>
@@ -52,5 +52,12 @@ export default {
 .nav-container {
   background-color: #ffffff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+.text-overflow {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
 }
 </style>
