@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <base-navbar class="f-left w-100pct"></base-navbar>
+    <base-navbar class="f-left w-100pct mg-bt-4px"></base-navbar>
     <router-view class="f-left w-100pct"/>
   </div>
 </template>
