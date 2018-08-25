@@ -26,8 +26,8 @@
         <b-field label="To Store Address">
           <b-input placeholder="0x1234...56789"  v-model="inputToAddr"></b-input>
         </b-field>
-        <div class="f-left w-100pct">
-          <div class="button f-left w-100pct">
+        <div class="f-left w-100pct" v-if="detectCipherQRScaner()">
+          <div class="button f-left w-100pct" @click="scanQr()">
             <b-icon icon="qrcode-scan" class="mg-r-10px"></b-icon> Scan QR Code
           </div>
         </div>
@@ -96,6 +96,19 @@ export default {
     await this.getTokenBalance()
   },
   methods: {
+    detectCipherQRScaner () {
+      const isCipher = !!window.__CIPHER__
+      const canScanQRCode = !!(
+        window.web3 &&
+        window.web3.currentProvider &&
+        window.web3.currentProvider.scanQRCode
+      )
+      return isCipher && canScanQRCode
+    },
+    async scanQr () {
+      const data = await window.web3.currentProvider.scanQRCode()
+      this.inputToAddr = data
+    },
     async getUserAddr () {
       const address = await this.$web3.eth.getAccounts()
       this.userAddr = address[0]
