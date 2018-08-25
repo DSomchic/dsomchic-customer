@@ -30,13 +30,27 @@
 
 <script>
 // @ is an alias to /src
+import bigNumber from '@/utils/bn'
 
 export default {
   name: 'home',
-  mounted () {
-    // console.log(this)
-    // console.log(this.$web3)
-    // console.log(this.$contract.methods)
+  data () {
+    return {
+      accountAddress: ''
+    }
+  },
+  async mounted () {
+    this.getTokenBalance()
+    this.accountAddress = await this.$web3.eth.getAccounts()
+  },
+  methods: {
+    async getTokenBalance () {
+      let address = await this.$web3.eth.getAccounts()
+      console.log(address[0])
+      console.log(this.$web3)
+      let currentBalance = bigNumber.toHumanNumber(await this.$contract.methods.balanceOf(address[0]).call())
+      console.log('call', currentBalance)
+    }
   }
 }
 </script>

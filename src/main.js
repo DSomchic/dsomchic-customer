@@ -16,9 +16,7 @@ if (typeof window.web3 !== 'undefined') {
 } else {
   console.log('Please login Metamask.')
 }
-
 const contract = new web3.eth.Contract(Contract.abi, Contract.address)
-
 Vue.prototype.$web3 = web3
 Vue.prototype.$contract = contract
 Vue.config.productionTip = false

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <base-navbar></base-navbar>
-    <router-view/>
+    <base-navbar class="f-left w-100pct"></base-navbar>
+    <router-view class="f-left w-100pct"/>
   </div>
 </template>
 
