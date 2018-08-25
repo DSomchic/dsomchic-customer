@@ -5,14 +5,31 @@
       <div class="dp-flex jtf-ct-center al-it-center f-drt-column h-100vh w-100pct">
         <div class="w-300px pd-10px t-al-center bd-cl-light bd-w-2px bd-st-solid h-1000px">
           <div id="myQr" class="pd-vtc-20px"></div>
-          <div class="h-50px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-space-between al-it-center t-w-500 ovf-y-hidden">
+          <div class="h-60px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-start al-it-center f-w-bold ovf-y-hidden">
               <img src="@/assets/somc.png" width="30px" height="30px" />
-              Current Balance: {{currentBalance}} SOMC
+              <div class=" t-al-left pd-hrzt-15px">
+                <div class="f-left w-100pct">
+                  SOMC
+                </div>
+                <div class="f-left w-100pct">
+                  {{currentBalance}} SOMC
+                </div>
+              </div>
           </div>
-          <div class="h-50px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-space-between al-it-center t-w-500 ovf-y-hidden mg-vtc-30px">
-              <img src="@/assets/logo.png" width="30px" height="30px" />
-              Current Balance: {{currentBalance}} ETH
+          <div class="h-60px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-start al-it-center f-w-bold ovf-y-hidden mg-vtc-15px">
+              <img src="@/assets/eth.png" width="30px" height="30px" />
+              <div class=" t-al-left pd-hrzt-15px">
+                <div class="f-left w-100pct">
+                  Ethereum
+                </div>
+                <div class="f-left w-100pct">
+                  {{ethBalance}} ETH
+                </div>
+              </div>
           </div>
+          <button class="h-50px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-success bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-center al-it-center f-w-bold ovf-y-hidden mg-bt-30px cl-white bg-cl-success  f-s-18px" @click="gotoTranferPage">
+              Redeem
+          </button>
         </div>
       </div>
     </section>
@@ -29,12 +46,14 @@ export default {
   data () {
     return {
       accountAddress: '',
-      currentBalance: ''
+      currentBalance: '',
+      ethBalance: ''
     }
   },
   async mounted () {
     this.accountAddress = await this.$web3.eth.getAccounts()
     this.accountAddress = this.accountAddress[0]
+    this.ethBalance = bigNumber.toHumanNumber(await this.$web3.eth.getBalance(this.accountAddress))
     this.getTokenBalance()
   },
   methods: {
@@ -47,6 +66,9 @@ export default {
       qr.addData(this.accountAddress)
       qr.make()
       document.getElementById('myQr').innerHTML = qr.createSvgTag(7, 0)
+    },
+    gotoTranferPage () {
+      this.$router.push({name: 'Transfer'})
     }
   }
 }
@@ -63,6 +85,6 @@ export default {
   box-sizing: border-box;
 }
 .h-1000px {
-  height: 450px;
+  height: 500px;
 }
 </style>

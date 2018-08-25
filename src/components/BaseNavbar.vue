@@ -1,7 +1,7 @@
 <template>
   <div class="f-left w-100pct pd-15px nav-container">
     <div class="f-left w-20pct">
-      <img class="f-left" src="@/assets/logo.png" width="30px" height="30px">
+      <img class="f-left" src="@/assets/eth.png" width="30px" height="30px">
     </div>
     <div class="f-left w-60pct t-al-center pd-t-5px">
       <a v-clipboard:copy="userAddr" v-clipboard:success="onCopy">{{ userAddr }}</a>
