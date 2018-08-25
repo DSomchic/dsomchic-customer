@@ -5,6 +5,7 @@ import Buefy from 'buefy'
 import Web3 from 'web3'
 import VueClipboard from 'vue-clipboard2'
 import Contract from '@/utils/contact'
+import VueElementLoading from 'vue-element-loading'
 import 'buefy/lib/buefy.css'
 import 'begeta/css/begeta.min.css'
 
@@ -12,6 +13,8 @@ import 'mdi/css/materialdesignicons.min.css'
 
 Vue.config.productionTip = false
 Vue.use(Buefy)
+
+Vue.component('VueElementLoading', VueElementLoading)
 
 let web3 = null
 if (typeof window.web3 !== 'undefined') {

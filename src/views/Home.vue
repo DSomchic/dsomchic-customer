@@ -10,7 +10,7 @@
               Current Balance: {{currentBalance}} SOMC
           </div>
           <div class="h-50px w-100pct pd-vtc-10px pd-hrzt-10px bd-cl-light bd-w-1px bd-st-solid bd-rd-3px shadow dp-flex jtf-ct-space-between al-it-center t-w-500 ovf-y-hidden mg-vtc-30px">
-              <img src="@/assets/logo.png" width="30px" height="30px" />
+              <img src="@/assets/eth.png" width="30px" height="30px" />
               Current Balance: {{currentBalance}} ETH
           </div>
         </div>
