@@ -1,0 +1,23 @@
+<template>
+  <nav class="navbar navbar--black pd-10px" role="navigation" aria-label="main navigation" >
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img alt="Vue logo" src="@/assets/logo.png">
+        <h1 class="title cl-white">Somchoic</h1>
+      </a>
+    </div>
+    <div class="navbar-end">
+      <span class="navbar-item title cl-white">0 SC</span>
+    </div>
+  </nav>
+</template>
+
+<style scoped>
+.navbar--black {
+  background: #191919;
+}
+/* DISABLE HOVER */
+.navbar-item:hover {
+  background: #191919 !important;
+}
+</style>
