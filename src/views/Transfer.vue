@@ -8,7 +8,7 @@
         <div class="f-left w-100pct shadow pd-10px bd-rd-4px">
           <div class="f-left mg-r-10px">
             <img v-if="fromToken.code === 'ETH'" src="../assets/eth.png" width="50px">
-            <img v-if="fromToken.code === 'SOMC'" src="../assets/somc.png" width="50px">
+            <img v-if="fromToken.code === 'MIS'" src="../assets/somc.png" width="50px">
           </div>
           <div class="f-left">
             <div class="f-w-bold">{{ fromToken.name }}</div>
@@ -79,8 +79,8 @@ export default {
   data () {
     return {
       fromToken: {
-        name: 'SOMC',
-        code: 'SOMC',
+        name: 'MIS',
+        code: 'MIS',
         balance: 0
       },
       inputFrom: 0,
