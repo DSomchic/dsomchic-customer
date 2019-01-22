@@ -9,10 +9,10 @@
               <img src="@/assets/somc.png" width="30px" height="30px" />
               <div class=" t-al-left pd-hrzt-15px">
                 <div class="f-left w-100pct">
-                  SOMC
+                  MIS
                 </div>
                 <div class="f-left w-100pct">
-                  {{currentBalance}} SOMC
+                  {{currentBalance}} MIS
                 </div>
               </div>
           </div>
