@@ -1,7 +1,7 @@
 <template>
   <div class="f-left w-100pct pd-15px nav-container">
     <div class="f-left w-20pct">
-      <img class="f-left" src="https://p-u.popcdn.net/attachments/images/000/010/730/large/Pizza_Hackathon_Logo.png?1532094493" width="50px">
+      <img class="f-left" src="../assets/somc.png" width="50px">
     </div>
     <div class="f-left w-60pct t-al-center pd-t-10px">
       <a class="text-overflow" v-clipboard:copy="userAddr" v-clipboard:success="onCopy">{{ userAddr }}</a>
